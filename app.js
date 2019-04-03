@@ -1,1 +1,9 @@
-console.log('working')
+let userScore = 0;
+let computerScore = 0;
+let userScore_span = document.getElementById("user-score");
+let computerScore_span = document.getElementById("computer-score");
+let scoreBoard_div = document.querySelector(".score-board")
+let result_div = document.querySelector(".result");
+let rock_div = document.getElementById("r");
+let paper_div = document.getElementById("p");
+let scisspors_div = document.getElementById("s");
