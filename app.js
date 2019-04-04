@@ -21,21 +21,30 @@ function convertToWord(letter) {
     return 'Scissors'
 }
 function win(userChoice, computerChoice) {
+    let userChoice_div = document.getElementById(userChoice)
     userScore++
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = convertToWord(userChoice) + ' beats ' + convertToWord(computerChoice) + '. You win!'
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function () { userChoice_div.classList.remove('green-glow') }, 400)
 
 }
 function lose(userChoice, computerChoice) {
+    let userChoice_div = document.getElementById(userChoice)
     computerScore++
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = convertToWord(userChoice) + ' loses to ' + convertToWord(computerChoice) + '. You win!'
+    result_p.innerHTML = convertToWord(userChoice) + ' loses to ' + convertToWord(computerChoice) + '. You win!';
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function () { userChoice_div.classList.remove('red-glow') }, 400)
 
 }
 function draw(userChoice, computerChoice) {
+    let userChoice_div = document.getElementById(userChoice)
     result_p.innerHTML = convertToWord(userChoice) + ' draws with' + ' ' + convertToWord(computerChoice)
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(function () { userChoice_div.classList.remove('gray-glow') }, 400)
 }
 
 function game(userChoice) {
